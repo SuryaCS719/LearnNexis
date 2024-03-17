@@ -23,9 +23,12 @@ function Catalog() {
     ;(async () => {
       try {
         const res = await apiConnector("GET", categories.CATEGORIES_API)
+        console.log('res: ', res);
         const category_id = res?.data?.data?.filter(
+          
           (ct) => ct.name.split(" ").join("-").toLowerCase() === catalogName
         )[0]._id
+        console.log('category_id: ', category_id);
         setCategoryId(category_id)
       } catch (error) {
         console.log("Could not fetch Categories.", error)
@@ -34,9 +37,12 @@ function Catalog() {
   }, [catalogName])
   useEffect(() => {
     if (categoryId) {
+      console.log('categoryId: ', categoryId);
       ;(async () => {
         try {
           const res = await getCatalogPageData(categoryId)
+          
+          console.log('res: ', res);
           setCatalogPageData(res)
         } catch (error) {
           console.log(error)
@@ -44,8 +50,9 @@ function Catalog() {
       })()
     }
   }, [categoryId])
-
+  console.log('catalogPageData: ', catalogPageData);
   if (loading || !catalogPageData) {
+    
     return (
       <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
         <div className="spinner"></div>

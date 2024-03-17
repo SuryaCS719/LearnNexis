@@ -4,6 +4,7 @@ import { apiConnector } from "../apiConnector"
 import { catalogData } from "../apis"
 
 export const getCatalogPageData = async (categoryId) => {
+  console.log('categoryId: ', categoryId);  
   const toastId = toast.loading("Loading...")
   let result = []
   try {
@@ -18,6 +19,7 @@ export const getCatalogPageData = async (categoryId) => {
       throw new Error("Could Not Fetch Catagory page data.")
     }
     result = response?.data
+    console.log('result: ', result);
   } catch (error) {
     console.log("CATALOGPAGEDATA_API API ERROR............", error)
     toast.error(error.message)
