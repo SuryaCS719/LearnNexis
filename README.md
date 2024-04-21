@@ -1,1 +1,1 @@
-# StudyNotion Edtech Project
+# StudyNotion - LearnNexis Edtech Project - MERN stack
