@@ -33,7 +33,7 @@ LearnNexis is a comprehensive online learning platform designed to empower both 
 
 **Usage:**
 
-1. Visit the deployed website.
+1. Visit the deployed website: [LearnNexis](https://learn-nexis-surya-gitam.vercel.app/)
 2. Sign up or log in as an instructor or student.
 3. Instructors can create and manage courses.
 4. Students can browse courses, enroll, and start learning.
